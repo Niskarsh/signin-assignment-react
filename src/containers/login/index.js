@@ -14,9 +14,13 @@ export class Login extends Component {
 
     }
 
+    LiAuth = () => {
+    
+    }
+
     render () {
         return (
-            <Card />
+            <Card click={this.LiAuth}/>
         )
     }
 }
