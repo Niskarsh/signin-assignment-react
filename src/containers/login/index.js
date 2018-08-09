@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import { Card } from './card/index'
 
 export class Login extends Component {
     
@@ -15,7 +15,9 @@ export class Login extends Component {
     }
 
     render () {
-        return ("Hi")
+        return (
+            <Card />
+        )
     }
 }
 
