@@ -15,7 +15,7 @@ export class Login extends Component {
     }
 
     render () {
-        return ()
+        return ("Hi")
     }
 }
 

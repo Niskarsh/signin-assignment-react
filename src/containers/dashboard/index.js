@@ -15,7 +15,7 @@ export class Dashboard extends Component {
     }
 
     render () {
-        return ()
+        return ("Hi")
     }
 }
 
