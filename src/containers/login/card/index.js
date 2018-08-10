@@ -8,6 +8,7 @@ export const Card = (props) => {
             <p id="wi"> WITH LINKED IN</p>
 
             <button name="signin" onClick={props.click}>Li</button>
+            <p>{props.rec2?props.rec2: null}</p>
         </div>
     )
 }
