@@ -19,7 +19,7 @@ export class Login extends Component {
     LiAuth = async () => {
         let options = {
             withCredentials: true,
-            method: 'POST',
+            method: 'GET',
             uri: 'https://guarded-plains-96027.herokuapp.com/signin',
             headers: {
                 'content-type': 'application/x-www-form-urlencoded',
