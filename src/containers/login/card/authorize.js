@@ -15,11 +15,7 @@ class Authenticate extends Component {
 
     async componentDidMount () {
         const authorizationCode = qs.parse(this.props.location.search).code
-        await this.props.intiateGetAccessCode(authorizationCode, "/dashboard")
-        console.log (`------------this.props.code`, localStorage.getItem ("accessToken"))
-        this.setState ({redirect : true})
-        
-
+        await this.props.intiateGetAccessCode(authorizationCode, "/dashboard", this)
     }
 
     render() {
@@ -44,8 +40,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        intiateGetAccessCode: (authorizationCode, redirectUrl) => {
-            dispatch(intiateGetAccessCode(authorizationCode, redirectUrl))
+        intiateGetAccessCode: (authorizationCode, redirectUrl, reference) => {
+            dispatch(intiateGetAccessCode(authorizationCode, redirectUrl, reference))
 
         }
     }

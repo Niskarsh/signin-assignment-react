@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import request from 'request-promise'
 import { connect } from 'react-redux';
+import { Card } from './card/index'
 
 class Dashboard extends Component {
 
@@ -41,11 +42,12 @@ class Dashboard extends Component {
     }
 
     render() {
-        return (<div>
-            {
-                this.state.user.firstName
-        }
-        </div>)
+        return (
+            <div>
+            <Card user={this.state.user}/>
+            
+            </div>
+        )
     }
 }
 
