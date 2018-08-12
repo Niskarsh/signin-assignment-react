@@ -1,29 +1,45 @@
 .Card {
     background-color: white;
     border-radius: 5px;
-    border: 3px solid #6D97AC;
+    border: 1px solid white;
     padding: 10px 10px 10px 10px;
     border: 0px 0px 0px 0px;
-    width: 20%;
-    height: 50vh;
-    /* box-shadow: 10px 15px #A9A9A9; */
+    /* width: 20%;
+    height: 50vh; */
+    width: 250px;
+    height: 320px;
+    
+    /* position: relative; */
     position: relative;
-    top : 22vh;
-    left: 39%;
+    top : 20vh;
+    left: 19%;
+}
+.Card:hover {
+    box-shadow: 5px 6px rgb(255, 255, 255,.5);
 }
 
-.Card>p {
-    color : #6D97AC;
-    font-style: bold;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+.button {
+    border: 1px solid rgb(10, 24, 146);
+    width: 55px;
+    height : 55px;
+
+    background-color: white;
+    background-image: url('../../../assets/lin.jpg');
+    background-repeat: no-repeat;
+    background-position: center; 
+    border-radius: 50%;
+    background-size: cover;
 }
+.button:hover {
+    border: 1px solid rgb(10, 24, 146);
+    width: 65px;
+    height : 65px;
 
-#si {
-    font-size: 2.1em;
-    padding-bottom: 0px;
-
-}
-
-#wi {
-
+    background-color: white;
+    background-image: url('../../../assets/lin.jpg');
+    background-repeat: no-repeat;
+    background-position: center; 
+    border-radius: 50%;
+    background-size: cover;
 }

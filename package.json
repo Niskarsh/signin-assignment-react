@@ -3,7 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^3.8.1",
+    "ba": "0.0.5",
+    "babel-plugin-import": "^1.8.0",
     "dotenv": "^6.0.0",
+    "i": "^0.3.6",
     "query-string": "^6.1.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",

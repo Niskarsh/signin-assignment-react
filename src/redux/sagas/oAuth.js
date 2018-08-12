@@ -8,17 +8,16 @@ export function* getAccessCodeSaga (action) {
     let options = {
         withCredentials : true,
         method: 'GET',
-        uri: `http://localhost:3001/authorize?code=${action.code}`,
+        uri: `${process.env.REACT_APP_API_SERVER}authorize?code=${action.code}`,
         headers: {
             'content-type': 'application/x-www-form-urlencoded',
-            'Origin': 'http://localhost:3000/',
+            'Origin': `${process.env.REACT_APP_SERVER}`,
             'Access-Control-Request-Method': 'POST',
         }
 
     }
 
     const data = yield request(options)
-    console.log (`------aceessss`, JSON.parse(data).access_token)
     yield localStorage.setItem("accessToken", JSON.parse(data).access_token);
     yield put ({
         code : JSON.parse(data).access_token,

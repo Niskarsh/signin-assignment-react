@@ -5,7 +5,7 @@ import { AppRoutes } from './routes/appRoutes'
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="App layer">
         <AppRoutes />
       </div>
     );
