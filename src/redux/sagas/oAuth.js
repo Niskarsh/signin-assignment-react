@@ -19,6 +19,7 @@ export function* getAccessCodeSaga (action) {
 
     const data = yield request(options)
     console.log (`------aceessss`, JSON.parse(data).access_token)
+    yield localStorage.setItem("accessToken", JSON.parse(data).access_token);
     yield put ({
         code : JSON.parse(data).access_token,
         redirectUrl : action.redirectUrl,

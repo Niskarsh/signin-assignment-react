@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import * as qs from 'query-string'
 import request from 'superagent'
+import { Redirect } from "react-router-dom"
 import { connect } from 'react-redux';
 import { intiateGetAccessCode } from '../../../redux/actions/index'
 
@@ -15,17 +16,19 @@ class Authenticate extends Component {
     async componentDidMount () {
         const authorizationCode = qs.parse(this.props.location.search).code
         await this.props.intiateGetAccessCode(authorizationCode, "/dashboard")
+        console.log (`------------this.props.code`, localStorage.getItem ("accessToken"))
         this.setState ({redirect : true})
         
 
     }
 
     render() {
-
+        
         return (
             <div>
                 {
-                    this.state.redirect ? `redirect` : `waiting`
+                    
+                    this.state.redirect ? <Redirect to="/dashboard" />: `waiting`
                 }
             </div>
         )

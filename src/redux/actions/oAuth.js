@@ -1,10 +1,9 @@
-import request from 'request-promise'
-import * as actionTypes from './actionTypes'
+import { GET_ACCESS_CODE_INITIATE } from './actionTypes'
 
 export const intiateGetAccessCode = (code, redirectUrl) => {
     return {
         code,
         redirectUrl,
-        type : actionTypes.GET_ACCESS_CODE_INITIATE
+        type : GET_ACCESS_CODE_INITIATE
     }
 }
