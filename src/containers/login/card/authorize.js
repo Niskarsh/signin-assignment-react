@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Spin } from 'antd';
 import * as qs from 'query-string'
 import request from 'superagent'
 import { Redirect } from "react-router-dom"
@@ -24,7 +25,7 @@ class Authenticate extends Component {
             <div>
                 {
                     
-                    this.state.redirect ? <Redirect to="/dashboard" />: `waiting`
+                    this.state.redirect ? <Redirect to="/dashboard" />: <Spin size="large" />
                 }
             </div>
         )

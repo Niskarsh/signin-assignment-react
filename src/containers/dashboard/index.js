@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import request from 'request-promise'
+import { Spin } from 'antd';
 import { connect } from 'react-redux';
 import { Card } from './card/index'
 
@@ -43,8 +44,10 @@ class Dashboard extends Component {
 
     render() {
         return (
-            <div>
-            <Card user={this.state.user}/>
+            <div>{
+                this.state.user.firstName===undefined ? <Spin size="large" /> :<Card user={this.state.user}/>
+            }
+            
             
             </div>
         )
