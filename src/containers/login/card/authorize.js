@@ -12,21 +12,26 @@ class Authenticate extends Component {
         super(props)
         this.state = {
             redirect: false,
+            cancel: false
         }
     }
 
-    async componentDidMount () {
-        const authorizationCode = qs.parse(this.props.location.search).code
-        await this.props.intiateGetAccessCode(authorizationCode, "/dashboard", this)
+    async componentDidMount() {
+        if (qs.parse(this.props.location.search).error === undefined || qs.parse(this.props.location.search).error === null) {
+
+            const authorizationCode = qs.parse(this.props.location.search).code
+            await this.props.intiateGetAccessCode(authorizationCode, "/dashboard", this)
+        } else {
+            this.setState ({cancel : true})
+        }
     }
 
     render() {
-        
+
         return (
             <div>
                 {
-                    
-                    this.state.redirect ? <Redirect to="/dashboard" />: <Spin className="centered" size="large" />
+                    this.state.cancel ? <Redirect to="/" />:(this.state.redirect ? <Redirect to="/dashboard" /> : <Spin className="centered" size="large" />)
                 }
             </div>
         )
@@ -36,7 +41,7 @@ class Authenticate extends Component {
 
 const mapStateToProps = state => {
     return {
-        code : state.login.accessToken
+        code: state.login.accessToken
     }
 }
 
