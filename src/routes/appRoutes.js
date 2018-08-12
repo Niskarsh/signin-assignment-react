@@ -7,8 +7,8 @@ export const AppRoutes = () => {
     return (
         <Switch>
             <Route exact path="/" component={Login} />
-            <Route exact path="/authenticate" component={Authenticate} />
-            <Route exact path="/dashboard" component={Dashboard} />
+            <Route path="/authenticate" component={Authenticate} />
+            <Route path="/dashboard" component={Dashboard} />
         </Switch>
     )
 }
