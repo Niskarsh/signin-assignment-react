@@ -5,6 +5,7 @@ import request from 'superagent'
 import { Redirect } from "react-router-dom"
 import { connect } from 'react-redux';
 import { intiateGetAccessCode } from '../../../redux/actions/index'
+import './index.css'
 
 class Authenticate extends Component {
     constructor(props) {
@@ -25,7 +26,7 @@ class Authenticate extends Component {
             <div>
                 {
                     
-                    this.state.redirect ? <Redirect to="/dashboard" />: <Spin size="large" />
+                    this.state.redirect ? <Redirect to="/dashboard" />: <Spin className="centered" size="large" />
                 }
             </div>
         )

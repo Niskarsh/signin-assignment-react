@@ -3,6 +3,7 @@ import request from 'request-promise'
 import { Spin } from 'antd';
 import { connect } from 'react-redux';
 import { Card } from './card/index'
+import './card/index.css'
 
 class Dashboard extends Component {
 
@@ -45,7 +46,7 @@ class Dashboard extends Component {
     render() {
         return (
             <div>{
-                this.state.user.firstName===undefined ? <Spin size="large" /> :<Card user={this.state.user}/>
+                this.state.user.firstName===undefined ? <Spin className="centered" size="large" /> :<Card user={this.state.user}/>
             }
             
             
