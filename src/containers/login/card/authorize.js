@@ -9,12 +9,17 @@ class Authenticate extends Component {
         super(props)
         this.state = {
             redirect: false,
-
         }
+    }
+
+    async componentDidMount () {
         const authorizationCode = qs.parse(this.props.location.search).code
-        this.props.intiateGetAccessCode(authorizationCode, "/dashboard")
+        await this.props.intiateGetAccessCode(authorizationCode, "/dashboard")
+        this.setState ({redirect : true})
+        
 
     }
+
     render() {
 
         return (
@@ -27,6 +32,13 @@ class Authenticate extends Component {
     }
 }
 
+
+const mapStateToProps = state => {
+    return {
+        code : state.login.accessToken
+    }
+}
+
 const mapDispatchToProps = dispatch => {
     return {
         intiateGetAccessCode: (authorizationCode, redirectUrl) => {
@@ -36,4 +48,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(Authenticate)
+export default connect(mapStateToProps, mapDispatchToProps)(Authenticate)

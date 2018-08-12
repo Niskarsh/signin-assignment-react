@@ -5,7 +5,7 @@ const initialState = {
 }
 
 export const login = (state = initialState, action) => {
-    console.log (`--------eeeeeeeee`)
+    console.log (`--------eeeeeeeee`, action.code)
     switch (action.type) {
         case GET_ACCESS_CODE:
 

@@ -18,9 +18,9 @@ export function* getAccessCodeSaga (action) {
     }
 
     const data = yield request(options)
-    console.log (`------aceessss`, data)
+    console.log (`------aceessss`, JSON.parse(data).access_token)
     yield put ({
-        code : data.access_token,
+        code : JSON.parse(data).access_token,
         redirectUrl : action.redirectUrl,
         type : GET_ACCESS_CODE
     })
